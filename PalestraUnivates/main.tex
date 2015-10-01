@@ -110,33 +110,9 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 \end{frame}
 
 \begin{frame}
-\frametitle{Sumário} % Table of contents slide, comment this block out to
-% remove it
-\tableofcontents % Throughout your presentation, if you choose to use
-% \section{} and \subsection{} commands, these will automatically be printed on
-% this slide as an overview of your presentation
-\end{frame}
-
-%------------------------------------------------------------------------------
-%	PRESENTATION SLIDES
-%------------------------------------------------------------------------------
-
-%------------------------------------------------
-\section{Introdução} % Sections can be created in order to organize your
-% presentation into discrete blocks, all sections and subsections are
-% automatically printed in the table of contents as an overview of the talk
-% ------------------------------------------------
-
-% \subsection{Subsection Example} % A subsection can be created just before a set
-% of slides with a common theme to further break down your presentation into
-% chunks
-
-\subsection{Apresentação}
-
-\begin{frame}
 	\frametitle{Guilherme Braganholo Flôres}
 	Engenheiro Químico formado pela UFRGS
-	\begin{itemize}
+	\begin{itemize} 
 		\item Universidade Federal do Rio Grande do Sul
 	\end{itemize}
 
@@ -151,15 +127,31 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 		\begin{itemize}
 			\item Laboratório Virtual de Predição de Propriedades
 		\end{itemize}
-	\item Modelagem industrial
+	\item Modelagem industrial 
 	\item Modelos termodinâmicos
 	\end{itemize}
 \end{frame}
 
+
+\begin{frame}
+\frametitle{Sumário} % Table of contents slide, comment this block out to
+% remove it
+\tableofcontents % Throughout your presentation, if you choose to use
+% \section{} and \subsection{} commands, these will automatically be printed on
+% this slide as an overview of your presentation
+\end{frame}
+
+%------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%------------------------------------------------------------------------------
+
+\section{Introdução}
 \subsection{Simuladores}
 \begin{frame}
-	\frametitle{O que é um simulador de processos?}
+	\frametitle{Simulador de processos}
 	\begin{itemize}
+		\item O que é um simulador de processos?
+		\item Quais os sumuladores disponives? 
 		\item Como são utilizados os simuladores dentro das industrias?
 		\item Quais são as vantagens do uso de simuladores?
 		\item Como um simulador funciona?
@@ -176,13 +168,14 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 		\begin{itemize}
 			\item Qualquer programa que transforme um sistema real em um sistema de
 			equações.
+			\pause
 			\begin{itemize}
 				\item Resolvemos por cálculos feitos à mão ou por programas computacionais
 			\end{itemize}
 		\end{itemize}
 
 		\column{.5\textwidth} % Right column and width
-			\includegraphics[width=0.9\textwidth]{img/Molecular_simulation_process.png}
+			\includegraphics[width=0.95\textwidth]{img/Molecular_simulation_process.png}
 	\end{columns}
 \end{frame}
 
@@ -213,17 +206,88 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 \end{frame}
  
 \begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Verbatim}
-	\begin{example}[Theorem Slide Code]
+\frametitle{Modelo EMSO}
+	\scriptsize
+	\begin{example}[Modelo de bomba simplificada em EMSO]
 		\begin{verbatim}
-		\begin{frame}
-		\frametitle{Theorem}
-		\begin{theorem}[Mass--energy equivalence]
-		$E = mc^2$
-		\end{theorem}
-		\end{frame}\end{verbatim}
+			Model pump
+			VARIABLES
+				in	Inlet as stream;
+				out	Outlet as streamPH;
+				dP as press_delta (Brief="Pump head");
+				rho as dens_mass;
+			EQUATIONS
+				Inlet.F = Outlet.F;
+				Inlet.z = Outlet.z;
+				rho * ((1-Outlet.v)/LiquidMw(Outlet.T,Outlet.P,Outlet.x) +
+				Outlet.v/VapourMw(Outlet.T,Outlet.P,Outlet.y)) = 1;
+				Outlet.P = Inlet.P + dP;
+				Outlet.h = Inlet.h + dP/rho * sum(Mw*Inlet.z);
+			end 
+		\end{verbatim}
 	\end{example}
 \end{frame}
+ 
+\begin{frame}
+	\frametitle{Principais motivos para o uso de um simulador}
+	Projeto de uma planta química
+
+	Otimização de uma planta química
+
+	Fazer diversos experimentos sem custo financeiro ou com custo mínimo!
+		\begin{itemize}
+		\item Experimentos que industrialmente são muito demorados podem ser feitos em
+		questões de minutos
+			\begin{itemize}
+				\item Colunas de destilação podem demorar dias para entrar
+				em estado estacionário
+		\end{itemize}
+	\end{itemize}
+	
+	Segurança
+		\begin{itemize}
+		\item Pode-se ultrapassar, sem risco os limites operacionais dos equipamentos
+	\end{itemize}
+\end{frame}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
 %------------------------------------------------
 
