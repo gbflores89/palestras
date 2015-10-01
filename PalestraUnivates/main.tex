@@ -18,7 +18,6 @@
 %\documentclass{beamer}
 \documentclass[aspectratio=169]{beamer}
 \mode<presentation> {
-
 % The Beamer class comes with a number of default slide themes
 % which change the colors and layouts of slides. Below this is a list
 % of all the themes, uncomment each in turn to see what they look like.
@@ -71,9 +70,11 @@
 %\usecolortheme{wolverine}
 
 %\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
-%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+%\setbeamertemplate{footline}[frame number] % To replace the footer line in all
+% slides with a simple slide count uncomment this line
 
-%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+ \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols
+% from the bottom of all slides uncomment this line
 }
 
 \usepackage{graphicx} % Allows including images
@@ -82,6 +83,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{animate}
+\input{preamble}
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -153,7 +155,7 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 	\frametitle{Simulador de processos}
 	\begin{itemize}
 		\item O que é um simulador de processos?
-		\item Quais os sumuladores disponives? 
+		\item Quais os simuladores disponives? 
 		\item Como são utilizados os simuladores dentro das industrias?
 		\item Quais são as vantagens do uso de simuladores?
 		\item Como um simulador funciona?
@@ -164,20 +166,20 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 
 \begin{frame}
 	\frametitle{O que são simuladores}
-	\begin{columns}[c] % The "c" option specifies centered vertical alignment while
-		% the "t" option is used for top vertical alignment
-		\column{.5\textwidth} % Left column and width
+	\begin{columns}[c]
+		\column{.5\textwidth}
 		\begin{itemize}
-			\item <1-> Qualquer programa que transforme um sistema real em um sistema de
-			equações.
+			\item <1-> Qualquer programa que transforme um sistema real 
+			em um sistema de equações.
 			\begin{itemize}
-				\item <2->Resolvemos por cálculos feitos à mão ou por programas
-				computacionais
+				\item <2->O sistema pode ser resolvido por cálculos feitos à
+				mão ou programas computacionais
 			\end{itemize}
 		\end{itemize}
 
 		\column{.5\textwidth} % Right column and width
-			\includegraphics<1->[width=0.95\textwidth]{img/Molecular_simulation_process.png}
+			\includegraphics<1->[width=0.95\textwidth]
+			{img/Molecular_simulation_process.png}
 	\end{columns}
 \end{frame}
 
@@ -188,7 +190,7 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 		\item Aspen Technology --> Aspen Plus
 		\item Aspen Technology --> Aspen HYSYS
 		\item PSE Ltd --> gPROMS
-		\item SimSci -->PRO/II
+		\item SimSci -->PRO/II \pause
 		\item \textbf{ALSOC Project --> EMSO}
 		\item \textbf{VRTech --> iiSE Simulator}
 	\end{itemize}
@@ -208,37 +210,28 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 	\end{center}
 \end{frame}
  
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Modelo EMSO}
-	\scriptsize
-	\begin{example}[Modelo de bomba simplificada em EMSO]
-		\begin{verbatim}
-			Model pump
-			VARIABLES
-				in	Inlet as stream;
-				out	Outlet as streamPH;
-				dP as press_delta (Brief="Pump head");
-				rho as dens_mass;
-			EQUATIONS
-				Inlet.F = Outlet.F;
-				Inlet.z = Outlet.z;
-				rho * ((1-Outlet.v)/LiquidMw(Outlet.T,Outlet.P,Outlet.x) +
-				Outlet.v/VapourMw(Outlet.T,Outlet.P,Outlet.y)) = 1;
-				Outlet.P = Inlet.P + dP;
-				Outlet.h = Inlet.h + dP/rho * sum(Mw*Inlet.z);
-			end 
-		\end{verbatim}
-	\end{example}
+\begin{frame}
+	\frametitle{Modelo EMSO}
+	\footnotesize
+		\begin{columns}[t] 
+			\column{.5\textwidth}
+				 \lstinputlisting[firstline=3, lastline=14, 
+				 numbers=none, language=EMSO]
+				 {img/pump.mso}
+
+			\column{.5\textwidth}
+				 \lstinputlisting[firstline=15, lastline=33, 
+				 numbers=none, language=EMSO]
+				 {img/pump.mso}
+		\end{columns}
 \end{frame}
  
 \begin{frame}
 	\frametitle{Principais motivos para o uso de um simulador}
-	Projeto de uma planta química
-
-	Otimização de uma planta química
-
+	Projeto de uma planta química\\
+	Otimização de uma planta química\\
 	Fazer diversos experimentos sem custo financeiro ou com custo mínimo!
-		\begin{itemize}
+	\begin{itemize}
 		\item Experimentos que industrialmente são muito demorados podem ser feitos em
 		questões de minutos
 			\begin{itemize}
@@ -246,9 +239,8 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 				em estado estacionário
 		\end{itemize}
 	\end{itemize}
-	
 	Segurança
-		\begin{itemize}
+	\begin{itemize}
 		\item Pode-se ultrapassar, sem risco os limites operacionais dos equipamentos
 	\end{itemize}
 \end{frame}

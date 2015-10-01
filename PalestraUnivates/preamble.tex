@@ -1,0 +1,62 @@
+\usepackage{listings}	% Pacote para linguagens
+\let\oldlstlistoflistings\lstlistoflistings
+ \renewcommand{\lstlistoflistings}{%
+   \begingroup%
+   \let\oldnumberline\numberline%
+   \renewcommand{\numberline}{\lstlistingname~\oldnumberline}%
+   \oldlstlistoflistings%
+   \endgroup}
+   
+ \lstdefinelanguage{EMSO}{
+  morekeywords={
+		Model,FlowSheet,Estimation,Optimization,
+		PARAMETERS,VARIABLES,EQUATIONS,DEVICES,SET,SPECIFY,GUESS,CONNECTIONS,
+		INITIAL,OPTIONS,ATTRIBUTES,ESTIMATE,EXPERIMENTS,MINIMIZE,MAXIMIZE,FREE,
+		Brief,Unit,DisplayUnit,Default,Upper,Lower,Type,final,Valid,Symbol,PosX,PosY,
+		Components,LiquidModel,VapourModel,
+		Pallete,Icon,Info,Protected,Hidden,
+		TimeStep,TimeEnd,TimeUnit,Dynamic,SparseAlgebra,NLPSolver,NLPSolveNLA,NLASolver,DAESolver,
+		File,RelativeAccuracy,AbsoluteAccuracy,EventAccuracy,MaxIterations,GuessFile,InitialFile,
+		Statistics,Fit,Parameter,Prediction,Significance,BiLateral,RunTests,NumJac,
+		using,for,as,to,if,end,else,switch,switchto,when,case,
+		in,out,outer, 
+		Integer,Real,Boolean,Text,Plugin,Switcher,CalcObject,
+		equal,and,or,true,false,
+        time,diff,sum,sumt,prod,prodt,transp,min,max,abs,
+		sign,round,sinh,cosh,tanh,coth,atan,
+		exp,log,ln,sqrt,sin,cos,tan,asin,acos},
+  sensitive = true,
+  morecomment=[l]{\#},
+  morecomment=[s]{\#*}{*\#},
+  morestring=[b]",
+  morestring=[b]'
+}
+\lstset{
+  basicstyle=\fontfamily{pcr}\fontseries{m}\selectfont\footnotesize,
+  commentstyle=\color[rgb]{0,0.5,0}\itshape,
+  keywordstyle=\color{blue}\bfseries,
+  stringstyle=\color[rgb]{0.5,0,0.5}\itshape,
+  showstringspaces=false,
+  numbers=left,
+  numberstyle=\fontfamily{pcr}\fontseries{m}\selectfont\tiny,
+  numberblanklines=false,
+  showlines=false,
+  belowskip=\bigskipamount{},
+  breaklines=true,
+  %stepnumber=2,
+  tabsize=6,
+  %extendedchars=true,
+  %float=h,
+  frame=tb
+}
+\renewcommand{\lstlistingname}{Código}
+\renewcommand{\lstlistlistingname}{Lista de Códigos}
+  
+\setbeamercovered{transparent}
+
+\pgfdeclareimage[width=6cm]{logobig}{img/logo/dequi}
+\pgfdeclareimage[width=1.0cm]{logo}{img/logo/dequismall}
+\logo{\pgfuseimage{logo}}
+
+
+  
