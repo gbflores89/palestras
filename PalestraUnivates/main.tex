@@ -182,7 +182,21 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 			{img/Molecular_simulation_process.png}
 	\end{columns}
 \end{frame}
+\note{Simuladores são todos os programas que podemos transformar sistemas reais
+em modelos para “prever o futuro”.\\
+Por exemplo, simuladores os simuladores de carros, simuladores de aviões,
+simuladores, por que não jogos de carros e aviões (?), simuladores de
+investimento, simuladores empresariais e assim por diante..\\
+Um exemplo, que mais adiante vocês irão se deparar, é o VPL, uma das simulações
+mais simples que existe, serve para prever como que eu vou pagar um
+investimento, em quanto tempo posso ter o meu dinheiro de volta.}
 
+\note{Outro exemplo extremo são os simuladores de treinamento da NASA, muito
+mais complexos que qualquer simulador de processo, mas o investimento que a NASA fez
+para esses simuladores são pagos pela segurança que eles trazem. Geralmente o
+piloto da nave espacial nunca guiou uma de verdade, mas passou horas e horas
+treinando em um simulador, e provavelmente já morreu diversas vezes de forma
+fictícia, é logico.}
 
 \begin{frame}
 	\frametitle{Simuladores mais conhecidos}
@@ -191,8 +205,21 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 		\item Aspen Technology --> Aspen HYSYS
 		\item PSE Ltd --> gPROMS
 		\item SimSci -->PRO/II \pause
+		\note<1>{Os simuladores mais conhecidos na indústria e na academia são estes:
+		O Aspen Plus e o Aspen HYSYS... O HYSYS foi comprado pela Aspen poucos anos
+		atrás e como já era muito conhecido, ficou o nome HYSYS, são simuladores de
+		blocos ou seja, coloca os equipamentos e o simulador resolve um por vez, até
+		que finalmente o sistema inteiro converge.\\
+		gPROMS eu sinceramente não conheço, mas sempre ouço falar
+		PRO/II segue a mesma linha do Aspen Plus e HYSYS}
+		
 		\item \textbf{ALSOC Project --> EMSO}
 		\item \textbf{VRTech --> iiSE Simulator}
+		\note<2>{ E estes dois últimos, o EMSO e o iiSE, são os simuladores que eu
+		mais trabalho, a vantagem destes simuladores é que eles são orientados a
+		equações, ou seja, transformam o fluxograma de processo em um sistema de
+		equações, onde o tamanho do sistema vai variar dependendo da complexidade
+		dele.}
 	\end{itemize}
 \end{frame}
 
@@ -201,6 +228,11 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{img/EMSO_1.PNG}
 	\end{center}
+	\note{Funciona mais ou menos assim, o usuário abre um novo arquivo e vai
+	montando a simulação, vai fazendo aos poucos, cada vez que o usuário manda o
+	comando para executar a simulação, o simulador automaticamente transforma todos
+	os equipamentos (blocos) em um único sistema de equações, pois cada bloco é
+	composto por uma serie de equações }
 \end{frame}
 
 \begin{frame}
@@ -208,8 +240,13 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{img/EMSO_2.PNG}
 	\end{center}
+	\note{Somente depois de tudo transformado em equações, que ai sim o simulador
+	começar a calcular o sistema.\\
+	Bom ai vai de cada usuário saber o que deseja simular, nesse sentido eu digo
+	que da pra simular tudo que acontece na indústria química, desde que utilize o
+	simulador adequado }
 \end{frame}
- 
+
 \begin{frame}
 	\frametitle{Modelo EMSO}
 	\footnotesize
