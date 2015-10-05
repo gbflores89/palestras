@@ -1,0 +1,19 @@
+using "streams";
+
+Model pump
+	PARAMETERS
+	VARIABLES
+in	Inlet as stream;
+out	Outlet as streamPH;
+	dP as press_delta (Brief="Pump head");
+	EQUATIONS
+	"Molar Balance"
+	Inlet.F = Outlet.F;
+	Inlet.z = Outlet.z;
+	"Pump head"
+	Outlet.P = Inlet.P + dP;
+	"Enthalpy"
+	Outlet.h = Inlet.h;
+end
+
+

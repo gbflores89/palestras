@@ -150,119 +150,63 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 %------------------------------------------------------------------------------
 \logo{\pgfuseimage{logo}}
 \section{Introdução}
-\subsection{Simuladores}
 \begin{frame}
-	\frametitle{Simulador de processos}
+	\frametitle{O que devemos ter em mente}
 	\begin{itemize}
 		\item O que é um simulador de processos?
-		\item Quais os simuladores disponives? 
-		\item Como são utilizados os simuladores dentro das industrias?
+		\item Para que serve um simulador de processo?
 		\item Quais são as vantagens do uso de simuladores?
+		\item Como são utilizados os simuladores dentro das industrias?
+		\item Quais os simuladores disponives? 
 		\item Como um simulador funciona?
-		\item O que é um modelo industrial?
-		\item Para que serve um modelo industrial
 	\end{itemize}
 \end{frame}
+
+\subsection{Simuladores}
 
 \begin{frame}
 	\frametitle{O que são simuladores}
 	\begin{columns}[c]
 		\column{.5\textwidth}
 		\begin{itemize}
-			\item <1-> Qualquer programa que transforme um sistema real 
+			\item Qualquer programa que transforme um ''coisa'' real 
 			em um sistema de equações.
+			\note<1>{Simuladores são todos os programas que podemos transformar sistemas
+			reais em modelos para “prever o futuro”.\\
+			Por exemplo, simuladores os simuladores de carros, simuladores de aviões,
+			simuladores, por que não jogos de carros e aviões (?), simuladores de
+			investimento, simuladores empresariais e assim por diante..\\
+			Um exemplo, que mais adiante vocês irão se deparar, é o VPL, uma das simulações
+			mais simples que existe, serve para prever como que eu vou pagar um
+			investimento, em quanto tempo posso ter o meu dinheiro de volta.}
 			\begin{itemize}
 				\item <2->O sistema pode ser resolvido por cálculos feitos à
 				mão ou programas computacionais
 			\end{itemize}
 		\end{itemize}
-
+		\note<2>{Outro exemplo extremo são os simuladores de treinamento da NASA,
+		muito mais complexos que qualquer simulador de processo, mas o investimento que a NASA fez
+		para esses simuladores são pagos pela segurança que eles trazem. Geralmente o
+		piloto da nave espacial nunca guiou uma de verdade, mas passou horas e horas
+		treinando em um simulador, e provavelmente já morreu diversas vezes de forma
+		fictícia, é logico.}
 		\column{.5\textwidth} % Right column and width
-			\includegraphics<1->[width=0.95\textwidth]
+			\includegraphics[width=0.95\textwidth]
 			{img/Molecular_simulation_process.png}
 	\end{columns}
 \end{frame}
-\note{Simuladores são todos os programas que podemos transformar sistemas reais
-em modelos para “prever o futuro”.\\
-Por exemplo, simuladores os simuladores de carros, simuladores de aviões,
-simuladores, por que não jogos de carros e aviões (?), simuladores de
-investimento, simuladores empresariais e assim por diante..\\
-Um exemplo, que mais adiante vocês irão se deparar, é o VPL, uma das simulações
-mais simples que existe, serve para prever como que eu vou pagar um
-investimento, em quanto tempo posso ter o meu dinheiro de volta.}
-
-\note{Outro exemplo extremo são os simuladores de treinamento da NASA, muito
-mais complexos que qualquer simulador de processo, mas o investimento que a NASA fez
-para esses simuladores são pagos pela segurança que eles trazem. Geralmente o
-piloto da nave espacial nunca guiou uma de verdade, mas passou horas e horas
-treinando em um simulador, e provavelmente já morreu diversas vezes de forma
-fictícia, é logico.}
 
 \begin{frame}
-	\frametitle{Simuladores mais conhecidos}
-	\begin{itemize}
-		\item Aspen Technology --> Aspen Plus
-		\item Aspen Technology --> Aspen HYSYS
-		\item PSE Ltd --> gPROMS
-		\item SimSci -->PRO/II \pause
-		\note<1>{Os simuladores mais conhecidos na indústria e na academia são estes:
-		O Aspen Plus e o Aspen HYSYS... O HYSYS foi comprado pela Aspen poucos anos
-		atrás e como já era muito conhecido, ficou o nome HYSYS, são simuladores de
-		blocos ou seja, coloca os equipamentos e o simulador resolve um por vez, até
-		que finalmente o sistema inteiro converge.\\
-		gPROMS eu sinceramente não conheço, mas sempre ouço falar
-		PRO/II segue a mesma linha do Aspen Plus e HYSYS}
-		
-		\item \textbf{ALSOC Project --> EMSO}
-		\item \textbf{VRTech --> iiSE Simulator}
-		\note<2>{ E estes dois últimos, o EMSO e o iiSE, são os simuladores que eu
-		mais trabalho, a vantagem destes simuladores é que eles são orientados a
-		equações, ou seja, transformam o fluxograma de processo em um sistema de
-		equações, onde o tamanho do sistema vai variar dependendo da complexidade
-		dele.}
-	\end{itemize}
+	\frametitle{O que são simulador de processo?}
+	\begin{columns}[t] 
+		\column{.5\textwidth}
+		Em simuladores de processo a ``coisa'' passa a ser a planta industrial, ou
+		parte dela.
+		\column{.5\textwidth}
+		% colocar alguma imagem para ilustrar!!!
+	\end{columns}
 \end{frame}
 
-\begin{frame}
-	\frametitle{EMSO}
-	\begin{center}
-		\includegraphics[width=0.9\textwidth]{img/EMSO_1.PNG}
-	\end{center}
-	\note{Funciona mais ou menos assim, o usuário abre um novo arquivo e vai
-	montando a simulação, vai fazendo aos poucos, cada vez que o usuário manda o
-	comando para executar a simulação, o simulador automaticamente transforma todos
-	os equipamentos (blocos) em um único sistema de equações, pois cada bloco é
-	composto por uma serie de equações }
-\end{frame}
-
-\begin{frame}
-	\frametitle{EMSO}
-	\begin{center}
-		\includegraphics[width=0.9\textwidth]{img/EMSO_2.PNG}
-	\end{center}
-	\note{Somente depois de tudo transformado em equações, que ai sim o simulador
-	começar a calcular o sistema.\\
-	Bom ai vai de cada usuário saber o que deseja simular, nesse sentido eu digo
-	que da pra simular tudo que acontece na indústria química, desde que utilize o
-	simulador adequado }
-\end{frame}
-
-\begin{frame}
-	\frametitle{Modelo EMSO}
-	\footnotesize
-		\begin{columns}[t] 
-			\column{.5\textwidth}
-				 \lstinputlisting[firstline=3, lastline=14, 
-				 numbers=none, language=EMSO]
-				 {img/pump.mso}
-
-			\column{.5\textwidth}
-				 \lstinputlisting[firstline=15, lastline=33, 
-				 numbers=none, language=EMSO]
-				 {img/pump.mso}
-		\end{columns}
-\end{frame}
- 
 \begin{frame}
 	\frametitle{Principais motivos para o uso de um simulador}
 	Projeto de uma planta química\\
@@ -292,6 +236,199 @@ fictícia, é logico.}
 		\item Pode-se ultrapassar, sem risco os limites operacionais dos equipamentos
 	\end{itemize}
 \end{frame}
+
+\begin{frame}
+	\frametitle{Simuladores mais conhecidos}
+	\begin{itemize}
+		\item Aspen Technology --> Aspen Plus
+		\item Aspen Technology --> Aspen HYSYS
+		\item PSE Ltd --> gPROMS
+		\item SimSci -->PRO/II \pause 
+		\note<1>{Os simuladores mais conhecidos na indústria e na academia são estes:
+		O Aspen Plus e o Aspen HYSYS... O HYSYS foi comprado pela Aspen poucos anos
+		atrás e como já era muito conhecido, ficou o nome HYSYS, são simuladores de
+		blocos ou seja, coloca os equipamentos e o simulador resolve um por vez, até
+		que finalmente o sistema inteiro converge.\\
+		gPROMS eu sinceramente não conheço, mas sempre ouço falar
+		PRO/II segue a mesma linha do Aspen Plus e HYSYS}
+		
+		\item \textbf{ALSOC Project --> EMSO}
+		\item \textbf{VRTech --> iiSE Simulator}
+		\note<2>{ E estes dois últimos, o EMSO e o iiSE, são os simuladores que eu
+		mais trabalho, a vantagem destes simuladores é que eles são orientados a
+		equações, ou seja, transformam o fluxograma de processo em um sistema de
+		equações, onde o tamanho do sistema vai variar dependendo da complexidade
+		dele.}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{EMSO}
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{img/EMSO_1.PNG}
+	\end{center}
+	\note{Funciona mais ou menos assim, o usuário abre um novo arquivo e vai
+	montando a simulação, vai fazendo aos poucos, cada vez que o usuário manda o
+	comando para executar a simulação, o simulador automaticamente transforma todos
+	os equipamentos (blocos) em um único sistema de equações, pois cada bloco é
+	composto por uma serie de equações \\
+	No caso este exemplo é um pequeno pedaço de uma plataforma de pertróleo}
+\end{frame}
+
+\begin{frame}
+	\frametitle{EMSO}
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{img/EMSO_2.PNG}
+	\end{center}
+	\note{Somente depois de tudo transformado em equações, que ai sim o simulador
+	começar a calcular o sistema.\\
+	Bom ai vai de cada usuário saber o que deseja simular, nesse sentido eu digo
+	que da pra simular tudo que acontece na indústria química, desde que utilize o
+	simulador adequado }
+\end{frame}
+
+\subsection{Modelos}
+
+\begin{frame}
+	Ok já sabemos o que são simuladores, mas como eles funcionam?\\
+	\begin{itemize}
+	  \item Cada equipamento do simulador é um \code{modelo}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Modelo EMSO}
+	\footnotesize
+		\begin{columns}[t] 
+			\column{.5\textwidth}
+				 \lstinputlisting[firstline=3, lastline=14, 
+				 numbers=none, language=EMSO]
+				 {img/pump.mso}
+
+			\column{.5\textwidth}
+				 \lstinputlisting[firstline=15, lastline=33, 
+				 numbers=none, language=EMSO]
+				 {img/pump.mso}
+		\end{columns}
+	\note{Todos os simuladores tem um código assim implementado, óbvio que podemos
+	ter implementações mais ou menos rigorosas, esse exemplo é uma bomba
+	simplificada, se bem que ainda podemos simplificar mais ainda.}
+ 	
+\end{frame}
+
+\begin{frame}
+ 	\frametitle{Modelo EMSO}
+ 	\framesubtitle{Não façam isso em casa!!}  
+	\begin{columns}[c] 
+		\column{.5\textwidth}
+			 \lstinputlisting[firstline=3, lastline=17, 
+			 numbers=none, language=EMSO] 
+			 {img/pump2.mso} 
+		\note<1>{Por favor, não façam isso em casa, e nem quando estiverem trabalhando
+		com um modelo sério\\}
+		\pause
+		\column{.5\textwidth}
+			\begin{itemize}
+				\item Por que alguém faz um modelo assim??
+				\item Ok mas para que serve um modelo deste tipo??
+			\end{itemize}
+				
+			\pause
+			\begin{block}{}
+				\begin{itemize}
+					\item Simples, a bomba não é importante na minha simulação, tanto faz se
+					esqunta o fluido ou não.
+					\item Só preciso dela para um incremento de pressão.
+				\end{itemize}
+				\note<3>{Isso nos tras outra questão, o quanto certo está o nosso modelo}
+			\end{block}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Modelos}
+	\begin{columns}[c]
+		\column{.3\textwidth}
+	\begin{itemize}
+	  \item O que eu quero simular? \pause
+	  \note<1>{De nada adianta eu criar um modelo se eu não sei o que eu quero
+	  fazer com ele, isso é mais ou menos como: Ta indo pra onde? Não sei, mas to indo\\}
+	  \item Os modelos estão certos? \pause
+	  \note<1>{E agora temos um problema}
+	  \begin{itemize}
+		\item Não!!!
+		\item <alert@3> Todos os modelos estão ``errados''.
+	  \end{itemize}
+	  \note<3>{O que acontece é que todos os modelos estão errados, não importa o
+	  quanto esforço seja empregado para ele, ele vai estar errado. A parte boa da
+	  hitória é que mesmo errado, o modelo vai nos ajudar}
+	\end{itemize}
+		\column{.7\textwidth}
+		\includegraphics[width=0.9\textwidth]{img/blocos.png}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	Mas se todos os modelos estão errados, como podemos confiar neles?\\
+	\begin{itemize}
+	  \item Depende das simplificações que podemos admitir \pause
+	  \item Em um modelo rigoroso, por exemplo as simplificações são minimas e
+	  tudo que é possivel de ser calculado será calulado!
+	\end{itemize}
+	\note{Sim os modelos estão errados, mas depende do quanto errado podemos
+	admitir, em um modelo simplificado, como eu mostrei anteriormente sabemos que
+	foram feitas varias suposições como}
+\end{frame}
+
+\begin{frame}
+		\begin{columns}[c] 
+		\column{.5\textwidth}
+			Dependo das simplificações que forem feitas o modelo vai servir para o
+			nosso proposito.\\
+			\begin{itemize}
+				\item Não podemos simplificar no caso de uma bomba, pro exemplo \\
+					% colocar a equação cebtralizada sem numeração
+					$P_{in}=P_{out}$
+ 					\begin{equation}
+					P_{in}=P_{out}
+ 					\end{equation}
+	  			\item <2->Mas em um modelo simplificado podemos desconsiderar a curva da
+	  			bomba
+			\end{itemize}
+		\column{.5\textwidth}
+		\includegraphics[width=0.9\textwidth]{img/curva_bomba.png}
+	\end{columns}
+\end{frame}
+
+\subsection{Aqui}
+ 
+\begin{frame}
+	
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \begin{frame}
 	\frametitle{}
