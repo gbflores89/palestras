@@ -53,8 +53,15 @@
 \renewcommand{\lstlistlistingname}{Lista de Códigos}
   
 \setbeamercovered{transparent}
-%\setbeameroption{show notes}
+\setbeameroption{show notes}
 %\setbeameroption{show only notes}
+
+\setbeamercolor{note page}{bg=white, fg=black}
+\setbeamercolor{note title}{bg=white, fg=black}
+\setbeamercolor{note date}{parent=note title}
+\usepackage{pgfpages}
+%\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+
 
 \pgfdeclareimage[width=6cm]{logobig}{img/logo/dequi}
 \pgfdeclareimage[width=1.0cm]{logo}{img/logo/dequismall}

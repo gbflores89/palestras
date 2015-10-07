@@ -172,10 +172,10 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 			\item Qualquer programa que transforme um ''coisa'' real 
 			em um sistema de equações.
 			\note<1>{Simuladores são todos os programas que podemos transformar sistemas
-			reais em modelos para “prever o futuro”.\\
-			Por exemplo, simuladores os simuladores de carros, simuladores de aviões,
-			simuladores, por que não jogos de carros e aviões (?), simuladores de
-			investimento, simuladores empresariais e assim por diante..\\
+			reais em modelos para “prever o futuro”.\\ .\\
+			Por exemplo, os simuladores de carros, simuladores de aviões,
+			por que não jogos de carros e aviões (?), simuladores de
+			investimento, simuladores empresariais e assim por diante..\\ .\\
 			Um exemplo, que mais adiante vocês irão se deparar, é o VPL, uma das simulações
 			mais simples que existe, serve para prever como que eu vou pagar um
 			investimento, em quanto tempo posso ter o meu dinheiro de volta.}
@@ -186,8 +186,8 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 		\end{itemize}
 		\note<2>{Outro exemplo extremo são os simuladores de treinamento da NASA,
 		muito mais complexos que qualquer simulador de processo, mas o investimento que a NASA fez
-		para esses simuladores são pagos pela segurança que eles trazem. Geralmente o
-		piloto da nave espacial nunca guiou uma de verdade, mas passou horas e horas
+		para esses simuladores são pagos pela segurança que eles trazem.\\.\\
+		Geralmente o piloto da nave espacial nunca guiou uma de verdade, mas passou horas e horas
 		treinando em um simulador, e provavelmente já morreu diversas vezes de forma
 		fictícia, é logico.}
 		\column{.5\textwidth} % Right column and width
@@ -198,12 +198,15 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 
 \begin{frame}
 	\frametitle{O que são simulador de processo?}
-	\begin{columns}[t] 
-		\column{.5\textwidth}
+	\begin{columns}[c] 
+		\column{.3\textwidth}
 		Em simuladores de processo a ``coisa'' passa a ser a planta industrial, ou
 		parte dela.
-		\column{.5\textwidth}
-		% colocar alguma imagem para ilustrar!!!
+		\column{.7\textwidth}
+		\begin{center}
+			\includegraphics[width=0.5\textwidth]
+				{img/RefineryFlow.png}
+		\end{center}
 	\end{columns}
 \end{frame}
 
@@ -212,17 +215,17 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 	Projeto de uma planta química\\
 	\note{Quando o cálculo feito à mão é muito custoso, ou seja, podemos dar um
 	chute inicial para o cálculo de uma coluna de destilação, por exemplo, mas o
-	cálculo rigoroso, será feito apenas via simulador.\\}
+	cálculo rigoroso, será feito apenas via simulador.\\.\\}
 
 	Otimização de uma planta química\\
 	\note{Podemos inclusive, otimizar uma planta ainda em estado de
-	desenvolvimento.\\}
+	desenvolvimento.\\.\\}
 	
 	Fazer diversos experimentos sem custo financeiro ou com custo mínimo!
 	\note{E como sabemos, para qualquer otimização, devemos conhecer o
 	comportamneto da planta, ou seja, quais são os limites operacionais, e a
 	matriz de causa e efeito, se eu mexer neste parâmetro, qual o resultado da
-	planta?? e por assim em diante.\\}
+	planta?? e por assim em diante.\\.\\}
 	\begin{itemize}
 		\item Experimentos que industrialmente são muito demorados podem ser feitos em
 		questões de minutos
@@ -231,11 +234,13 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 				em estado estacionário
 		\end{itemize}
 	\end{itemize}
+	\pause
 	Segurança
 	\begin{itemize}
 		\item Pode-se ultrapassar, sem risco os limites operacionais dos equipamentos
 	\end{itemize}
 \end{frame}
+
 
 \begin{frame}
 	\frametitle{Simuladores mais conhecidos}
@@ -263,6 +268,36 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 \end{frame}
 
 \begin{frame}
+	\frametitle{Tipo de simuladores}
+	\begin{columns}[t] 
+		\column{.5\textwidth}
+			\textbf{Simuladores em blocos.}\\
+			Aspen Plus, por exemplo.\\
+			\begin{itemize}
+				\item A simulação é feita por etapas, um bloco por vez.
+				\begin{itemize}
+					\item Vários sistemas de equações menores resolvidos separadamente
+					\item O resultado de um equipamento depende diretamente do 
+				equipamento calculado anteriormente.
+				\end{itemize}
+				\item Apresenta mais problemas com reciclos
+			\end{itemize}
+		\column{.5\textwidth}
+			\textbf{Simuladores orientado a equações.}\\
+			EMSO e iiSE, por exemplo.\\
+			\begin{itemize}
+				\item A simulação é feita em uma unica etapa.
+				\begin{itemize}
+					\item A simulação inteira é transformado em um unico sistema de equações
+					\item A solução dos equipamentos é feita de forma simultanea para
+					todos.
+				\end{itemize}
+				
+			\end{itemize}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
 	\frametitle{EMSO}
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{img/EMSO_1.PNG}
@@ -281,7 +316,7 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 		\includegraphics[width=0.9\textwidth]{img/EMSO_2.PNG}
 	\end{center}
 	\note{Somente depois de tudo transformado em equações, que ai sim o simulador
-	começar a calcular o sistema.\\
+	começar a calcular o sistema.\\.\\
 	Bom ai vai de cada usuário saber o que deseja simular, nesse sentido eu digo
 	que da pra simular tudo que acontece na indústria química, desde que utilize o
 	simulador adequado }
@@ -293,7 +328,8 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 	Ok já sabemos o que são simuladores, mas como eles funcionam?\\
 	\begin{itemize}
 	  \item Cada equipamento do simulador é um \code{modelo}
-	\end{itemize}
+	\end{itemize} \pause
+	Como são estes \code{modelos}?
 \end{frame}
 
 \begin{frame}
@@ -310,10 +346,10 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 				 numbers=none, language=EMSO]
 				 {img/pump.mso}
 		\end{columns}
-	\note{Todos os simuladores tem um código assim implementado, óbvio que podemos
-	ter implementações mais ou menos rigorosas, esse exemplo é uma bomba
-	simplificada, se bem que ainda podemos simplificar mais ainda.}
- 	
+	\note{Todos os simuladores tem um código assim implementado, inclusive em
+	simuladores de blocos, óbvio que podemos ter implementações mais ou menos
+	rigorosas, esse exemplo é uma bomba simplificada, se bem que ainda podemos
+	simplificar mais ainda.}
 \end{frame}
 
 \begin{frame}
