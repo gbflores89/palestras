@@ -170,7 +170,7 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 		\column{.5\textwidth}
 		\begin{itemize}
 			\item Qualquer programa que transforme um ''coisa'' real 
-			em um sistema de equações.
+			em um (ou vários) sistema(s) de equações.
 			\note<1>{Simuladores são todos os programas que podemos transformar sistemas
 			reais em modelos para “prever o futuro”.\\ .\\
 			Por exemplo, os simuladores de carros, simuladores de aviões,
@@ -213,16 +213,16 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 \begin{frame}
 	\frametitle{Principais motivos para o uso de um simulador}
 	Projeto de uma planta química\\
-	\note{Quando o cálculo feito à mão é muito custoso, ou seja, podemos dar um
+	\note<1>{Quando o cálculo feito à mão é muito custoso, ou seja, podemos dar um
 	chute inicial para o cálculo de uma coluna de destilação, por exemplo, mas o
 	cálculo rigoroso, será feito apenas via simulador.\\.\\}
 
 	Otimização de uma planta química\\
-	\note{Podemos inclusive, otimizar uma planta ainda em estado de
+	\note<1>{Podemos inclusive, otimizar uma planta ainda em estado de
 	desenvolvimento.\\.\\}
 	
 	Fazer diversos experimentos sem custo financeiro ou com custo mínimo!
-	\note{E como sabemos, para qualquer otimização, devemos conhecer o
+	\note<1>{E como sabemos, para qualquer otimização, devemos conhecer o
 	comportamneto da planta, ou seja, quais são os limites operacionais, e a
 	matriz de causa e efeito, se eu mexer neste parâmetro, qual o resultado da
 	planta?? e por assim em diante.\\.\\}
@@ -249,11 +249,12 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 		\item Aspen Technology --> Aspen HYSYS
 		\item PSE Ltd --> gPROMS
 		\item SimSci -->PRO/II \pause 
-		\note<1>{Os simuladores mais conhecidos na indústria e na academia são estes:
-		O Aspen Plus e o Aspen HYSYS... O HYSYS foi comprado pela Aspen poucos anos
-		atrás e como já era muito conhecido, ficou o nome HYSYS, são simuladores de
-		blocos ou seja, coloca os equipamentos e o simulador resolve um por vez, até
-		que finalmente o sistema inteiro converge.\\
+		\note<1>{Os simuladores mais conhecidos na indústria e na academia são
+		estes:\\.\\ O Aspen Plus (caro, mas muito bom) e o Aspen HYSYS... \\
+		O HYSYS foi comprado pela Aspen poucos anos atrás e como já era muito
+		conhecido, ficou o nome HYSYS, são simuladores de blocos ou seja, coloca os
+		equipamentos e o simulador resolve um por vez, até que finalmente o sistema
+		inteiro converge.\\.\\
 		gPROMS eu sinceramente não conheço, mas sempre ouço falar
 		PRO/II segue a mesma linha do Aspen Plus e HYSYS}
 		
@@ -292,11 +293,27 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 					\item A solução dos equipamentos é feita de forma simultanea para
 					todos.
 				\end{itemize}
-				
 			\end{itemize}
 	\end{columns}
+	\note{Bom, temos dois tipos de simuladores, os simuladores de blocos e os
+	orientados a equações\\
+	Os simuladores de blocos, como o Aspem, transformam o fluxograma de processo
+	em vários sistemas de equações, um para cada equipamento e resolve o
+	problema inteiro em etapas.\\.\\
+	Por outro lado os simuladores orinetados a equações transformam o fluxograma
+	como um todo em um unico sistema de equações e resolve tudo de uma vez só}
 \end{frame}
 
+\begin{frame}
+	\frametitle{Simuladores de blocos}
+	Fazer aqui uma figura com vários blocos para demonstrar o simulador funcionando
+\end{frame}
+
+{
+\begingroup
+\setbeamertemplate{headline}{}
+\addtobeamertemplate{frametitle}{\vspace*{-0.9\baselineskip}}{}
+\setbeamertemplate{headline}{}
 \begin{frame}
 	\frametitle{EMSO}
 	\begin{center}
@@ -322,6 +339,8 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 	simulador adequado }
 \end{frame}
 
+\endgroup
+}
 \subsection{Modelos}
 
 \begin{frame}
@@ -332,6 +351,11 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 	Como são estes \code{modelos}?
 \end{frame}
 
+{
+\begingroup
+\setbeamertemplate{headline}{}
+\addtobeamertemplate{frametitle}{\vspace*{-0.9\baselineskip}}{}
+\setbeamertemplate{headline}{}
 \begin{frame}
 	\frametitle{Modelo EMSO}
 	\footnotesize
@@ -340,7 +364,6 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 				 \lstinputlisting[firstline=3, lastline=14, 
 				 numbers=none, language=EMSO]
 				 {img/pump.mso}
-
 			\column{.5\textwidth}
 				 \lstinputlisting[firstline=15, lastline=33, 
 				 numbers=none, language=EMSO]
@@ -353,22 +376,21 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 \end{frame}
 
 \begin{frame}
- 	\frametitle{Modelo EMSO}
- 	\framesubtitle{Não façam isso em casa!!}  
+ 	\frametitle{Modelo simplificado}
+%  	\framesubtitle{Não façam isso em casa!!}  
 	\begin{columns}[c] 
 		\column{.5\textwidth}
 			 \lstinputlisting[firstline=3, lastline=17, 
 			 numbers=none, language=EMSO] 
 			 {img/pump2.mso} 
-		\note<1>{Por favor, não façam isso em casa, e nem quando estiverem trabalhando
-		com um modelo sério\\}
+		\note<3>{Por favor, não façam isso em casa, e nem quando estiverem trabalhando
+		com um modelo sério\\.\\}
 		\pause
 		\column{.5\textwidth}
 			\begin{itemize}
 				\item Por que alguém faz um modelo assim??
 				\item Ok mas para que serve um modelo deste tipo??
 			\end{itemize}
-				
 			\pause
 			\begin{block}{}
 				\begin{itemize}
@@ -380,6 +402,9 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 			\end{block}
 	\end{columns}
 \end{frame}
+\endgroup
+}
+
 
 \begin{frame}
 	\frametitle{Modelos}
@@ -387,10 +412,11 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 		\column{.3\textwidth}
 	\begin{itemize}
 	  \item O que eu quero simular? \pause
-	  \note<1>{De nada adianta eu criar um modelo se eu não sei o que eu quero
-	  fazer com ele, isso é mais ou menos como: Ta indo pra onde? Não sei, mas to indo\\}
+	  \note<3>{De nada adianta eu criar um modelo se eu não sei o que eu quero
+	  fazer com ele, isso é mais ou menos como: Ta indo pra onde? Não sei, mas to
+	  indo\\.\\}
 	  \item Os modelos estão certos? \pause
-	  \note<1>{E agora temos um problema}
+	  \note<3>{E agora temos um problema.\\.\\}
 	  \begin{itemize}
 		\item Não!!!
 		\item <alert@3> Todos os modelos estão ``errados''.
@@ -405,18 +431,21 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 \end{frame}
 
 \begin{frame}
-	Mas se todos os modelos estão errados, como podemos confiar neles?\\
+	\frametitle{Confiabilidade dos modelos}
+	Mas se todos os modelos estão errados,
+	como podemos confiar neles?\\
 	\begin{itemize}
 	  \item Depende das simplificações que podemos admitir \pause
 	  \item Em um modelo rigoroso, por exemplo as simplificações são minimas e
 	  tudo que é possivel de ser calculado será calulado!
 	\end{itemize}
-	\note{Sim os modelos estão errados, mas depende do quanto errado podemos
+	\note<2>{Sim os modelos estão errados, mas depende do quanto errado podemos
 	admitir, em um modelo simplificado, como eu mostrei anteriormente sabemos que
 	foram feitas varias suposições como}
 \end{frame}
 
 \begin{frame}
+	\frametitle{Confiabilidade dos modelos}
 	\begin{columns}[c] 
 	\column{.5\textwidth}
 		Dependo das simplificações que forem feitas o modelo vai servir para o
@@ -430,14 +459,256 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 			bomba
 		\end{itemize}
 		\column{.5\textwidth}
-		\includegraphics<2->[width=0.7\textwidth]{img/curva_bomba.jpg}
+		\begin{center}
+			\includegraphics<2->[width=0.65\textwidth]{img/curva_bomba.jpg}
+		\end{center}
 	\end{columns}
 \end{frame}
 
-\subsection{Aqui}
- 
+\section{Modelos Termodinâmicos}
+
 \begin{frame}
-	
+	\frametitle{O que já podemos decidir até o momento?}
+	\begin{itemize}
+		\item Já definimos o que queremos simular.
+		\item Já definimos o simulador.
+		\item Já definimos o qunto o nosso modelo pode ser simplificado.
+	\end{itemize}
+	\pause
+	Como calculamos as propriedades termodinâmicas que a simulação irá precisar?
+\end{frame}
+
+\begin{frame}
+	\frametitle{Tipos de modelos termodinamicos}
+	\begin{columns}[t] 
+		\column{.5\textwidth}
+			\textbf{Componentes puros}\\
+			\begin{itemize}
+				\item Equacões de estado.
+			\end{itemize}
+		\column{.5\textwidth}
+			\textbf{Misturas}\\
+			\begin{itemize}
+				\item Equações de estado combinada à regras de misturas.
+				\item Modelos de $G^E$ \\ 
+				Também conhecidos como modelos de $\gamma$
+				\item Modelos de $G^E$ combinado com equações de estado via regra de
+				mistura.
+			\end{itemize}
+	\end{columns}
+\end{frame}
+
+\subsection{Equações de Estado}
+
+\begin{frame}
+	\frametitle{Equações de Estado (Equations of State - EOS)}
+	\begin{itemize}
+		\item De alguma forma relacionam as propriedades $P$, $v$ e $T$ ou
+		outras propriedades não mensuráveis
+		\item Exemplos: gás ideal, cúbicas (PR, SRK, ...), tipo Virial, SAFT e
+		PC-SAFT
+		\item Partindo de uma EOS e do $Cp^{GI}$ é \textbf{possível calcular todas
+		as demais propriedades}: $u$, $h$, $s$, ...
+		\item São desenvolvidas para substâncias puras (a maioria)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{O Gás Ideal}
+	É a equação de estado mais comum
+	\begin{equation*}
+	P=\frac{RT}{v}
+	\end{equation*}
+	\begin{itemize}
+	  \item Baseada nas considerações de que:
+	  \begin{enumerate}
+	    \item As moléculas do gás não ocupam nenhum volume
+	    \item As moléculas do gás não exercem nenhuma força
+		intermolecular
+	  \end{enumerate}
+	\end{itemize}
+	Entretanto apenas pode representar a fase gás
+\end{frame}
+
+\begin{frame}
+	\frametitle{Equações cúbicas - Equação de van der Waals}
+	\begin{columns}[c] 
+	\column{.7\textwidth}
+		\begin{itemize}
+		\item Proposta por van der Waals em 1873
+		\item Considera as moléculas como esferas \\
+		rígidas para representar as forças\\
+		repulsivas
+		\item Forças de van der Waals descrevem as\\
+		forças atrativas
+		\item Depende de dois parâmetros: $a$ e $b$
+		\end{itemize}
+	\column{.3\textwidth}
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{img/waals.jpg}
+	\end{center}
+	\end{columns}
+	\begin{columns}
+		\column{.75\textwidth}
+			\begin{exampleblock}{Johannes Diderik van der Waals, Nobel em Física - 1910}
+				... for his studies of the physical state of liquids and gases..
+			\end{exampleblock}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Equações cúbicas - Equação de van der Waals}
+	\begin{columns}
+		\column{.75\textwidth}
+			\begin{exampleblock}{Correção devido ao tamanho das moléculas:}
+				volume molar não ocupado pelas moléculas, $v-b$
+			\end{exampleblock}
+	\end{columns}
+	\begin{columns}
+		\column{.75\textwidth}
+			\begin{exampleblock}{Correção devido às forças intermoleculares
+			atrativas:}
+			forças atrativas proporcionais a ${}^{1}/{}_{r^6}$ ou
+			${}^{1}/{}_{v^2}$
+			\end{exampleblock}
+	\end{columns}
+	\begin{itemize}
+		\item Forma final
+		\begin{equation*}
+		P=\frac{RT}{v-b}-\frac{a}{v^2}
+		\end{equation*}
+		\item Pode ser re-escrita na forma cúbica como:
+		\begin{equation*}
+		Pv^3-\left(RT+Pb\right)v^2+av-ab=0
+		\end{equation*}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Equações cúbicas - Equação de van der Waals}
+	\begin{itemize}
+		\item Os parâmetros $a$ e $b$ da equação de vdW podem ser obtidos a
+		partir do ponto crítico: 
+		\begin{equation*}
+		\left(\frac{\partial P}{\partial v}\right)_{T_r} = \left(\frac{\partial^2
+		P}{\partial v^2}\right)_{T_r}=0
+		\end{equation*}
+		\begin{equation*}
+		\Downarrow
+		\end{equation*}
+		\begin{equation*}
+		a=\frac{27}{64}\frac{\left(RT_c\right)^2}{P_c} \qquad
+		b=\frac{RT_c}{8P_c} 
+		\end{equation*}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Algumas Equações Cúbicas}
+	Outras equações cúbicas:
+	\begin{equation*}
+		P= \frac{RT}{v-b}-\frac{a(T)}{(v-\epsilon b)(v+\epsilon b)}
+	\end{equation*}
+	\begin{equation*}
+		a= \frac{\Psi \alpha(T_r) R^2 {T_c}^2}{P_c} \quad b= \Omega \frac{RT_c}{P_c}
+		\quad T_r = \frac{T}{T_c} \quad P= \frac{P}{P_c}
+	\end{equation*}
+	\begin{table}
+		\begin{tabular}{cc|ccccc}
+		\hline
+		{EoS} & Ano & {$\alpha(T_r)$} & {$\sigma$}& {$\epsilon$}&
+		{$\Omega$}& {$\Psi$} \\
+		\hline
+		vdW  & 1873& $1$ & 0 & 0 & $1/8$ & $27/64$\\
+		RK & 1949 & $1/\sqrt{T_r}$ & 1 & 0 & 0.08664& 0.42748\\
+		SRK & 1972 & $\alpha_{SRK}$ & 1 & 0 & 0.08664& 0.42748\\
+		PR & 1976 & $\alpha_{PR}$ & $1+\sqrt{2}$ & $1-\sqrt{2}$ & 0.07780 & 0.45724\\
+		\hline
+		\multicolumn{7}{l}{$\alpha_{SRK}=\left[1+\left(0.48+1.574w-0.176w^2\right)
+		\left(1-\sqrt{T_r}\right) \right]^2$}\\
+		\multicolumn{7}{l}{$\alpha_{PR}=\left[1+\left(0.37464+1.54226w-0.2699w^2\right)
+		\left(1-\sqrt{T_r}\right) \right]^2$}\\
+		\hline
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Comportamento $PvT$ de acetonitrila calculado com PR}
+	\begin{center}
+		\includegraphics[width=0.75\textwidth]{img/Acetonitrila.png} 
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Comportamento $PvT$ de acetonitrila calculado com GI}
+	Se possível mostrar com GI igual a essa img
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{img/Acetonitrila.png} 
+	\end{center}
+\end{frame}
+
+\subsection{Regras de Mistura}
+
+\begin{frame}
+	\frametitle{Regras de Mistura}
+	\begin{columns}[c]
+	\column{.5\textwidth}
+		\begin{itemize}
+			\item A grande maioria das equações de estado são desenvolvidas para
+			\textbf{substâncias puras}!
+			\item Para misturarmos substâncias devemos utilizar \textbf{regras de
+			misturas}
+			\begin{itemize}
+				\item Regras de misturas ``combinam as propriedades das substâncias puras em
+				um único parâmetro para que possamos utilizar nas EoS''	
+			\end{itemize}
+		\end{itemize}
+	\column{.5\textwidth}
+		\begin{itemize}
+			\item A primeira regra de mistura veio pela necessidade da primeira EoS
+			\begin{block}{Regra de mistura de van der Waals}
+			\begin{equation*}
+			a = \sum_i\sum_j{y_iy_ja_{ij}} \quad a_{ij}= \sqrt{a_i a_j}
+			\end{equation*}
+			\begin{equation*}
+			b = \sum_i{b_iy_i}
+			\end{equation*}
+			\end{block}
+		\end{itemize}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Outras regras de mistura}
+	Comentar sobre a as outras regras de misturas
+\end{frame}
+
+\subsection{Modelos de $G^E$}
+
+\begin{frame}
+	\frametitle{Modelos de $G^E$}
+	\begin{columns}[c]
+		\column{.4\textwidth}
+		Também conhecidos como:
+		\begin{itemize}
+			\item Modelos de coeficiente de atividade (da fase líquida)
+			\begin{itemize}
+				\item Modelos de $\gamma$
+			\end{itemize}
+		\end{itemize}
+		São modelos para representar a não idealidade da fase líquida
+		\begin{itemize}
+			\item Em sua principal formulação considera o vapor como \\
+			\textbf{gás ideal}
+		\end{itemize}
+		\column{.6\textwidth}
+		\includegraphics[width=1.0\textwidth]{img/VLE_ideal.png}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Lei de Raoult}
 \end{frame}
 
 
@@ -451,58 +722,45 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 \begin{frame}
 	\frametitle{}
 \end{frame}
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
