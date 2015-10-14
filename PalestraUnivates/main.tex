@@ -507,6 +507,7 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 		outras propriedades não mensuráveis
 		\item Exemplos: gás ideal, cúbicas (PR, SRK, ...), tipo Virial, SAFT e
 		PC-SAFT
+		\pause
 		\item Partindo de uma EOS e do $Cp^{GI}$ é \textbf{possível calcular todas
 		as demais propriedades}: $u$, $h$, $s$, ...
 		\item São desenvolvidas para substâncias puras (a maioria)
@@ -527,7 +528,7 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 		intermolecular
 	  \end{enumerate}
 	\end{itemize}
-	Entretanto apenas pode representar a fase gás
+	Entretanto pode apenas representar a fase gás
 \end{frame}
 
 \begin{frame}
@@ -587,20 +588,29 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 \begin{frame}
 	\frametitle{Equações cúbicas - Equação de van der Waals}
 	\begin{itemize}
-		\item Os parâmetros $a$ e $b$ da equação de vdW podem ser obtidos a
+		\item<1>Os parâmetros $a$ e $b$ da equação de vdW podem ser obtidos a
 		partir do ponto crítico: 
-		\begin{equation*}
-		\left(\frac{\partial P}{\partial v}\right)_{T_r} = \left(\frac{\partial^2
-		P}{\partial v^2}\right)_{T_r}=0
-		\end{equation*}
-		\begin{equation*}
-		\Downarrow
-		\end{equation*}
-		\begin{equation*}
-		a=\frac{27}{64}\frac{\left(RT_c\right)^2}{P_c} \qquad
-		b=\frac{RT_c}{8P_c} 
-		\end{equation*}
 	\end{itemize}
+	\begin{equation*}
+	\left(\frac{\partial P}{\partial v}\right)_{T_r} = \left(\frac{\partial^2
+	P}{\partial v^2}\right)_{T_r}=0
+	\end{equation*}
+	\pause
+	\begin{equation*}
+	\Downarrow
+	\end{equation*}
+	\begin{equation*}
+	a=\frac{27}{64}\frac{\left(RT_c\right)^2}{P_c} \qquad
+	b=\frac{RT_c}{8P_c} 
+	\end{equation*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Comportamento $PvT$ de acetonitrila calculado com vdW}
+	Colocar aqui vdW com $T_r = 1$ em vermrlho para demosntrar as derivadas = 0
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{img/Acetonitrila.png} 
+	\end{center}
 \end{frame}
 
 \begin{frame}
@@ -659,12 +669,14 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 			\textbf{substâncias puras}!
 			\item Para misturarmos substâncias devemos utilizar \textbf{regras de
 			misturas}
+			\pause
 			\begin{itemize}
-				\item Regras de misturas ``combinam as propriedades das substâncias puras em
-				um único parâmetro para que possamos utilizar nas EoS''	
+				\item Regras de misturas combinam as propriedades das substâncias puras em
+				um único parâmetro para que possamos utilizar nas EoS	
 			\end{itemize}
 		\end{itemize}
 	\column{.5\textwidth}
+		\pause
 		\begin{itemize}
 			\item A primeira regra de mistura veio pela necessidade da primeira EoS
 			\begin{block}{Regra de mistura de van der Waals}
@@ -709,7 +721,23 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 
 \begin{frame}
 	\frametitle{Lei de Raoult}
+	A Lei de Raoult considera a fase líquida como ideal, com esta preposição temos
+	$\gamma = 1$
+	Colocar o desenvolvimento da Lei de Raoult
 \end{frame}
+
+\begin{frame}
+	\frametitle{Lei de Raoult modificada}
+	Entetanto sabemos que são apenas casos raros que podemos considerar a fase
+	líquida como ideal.
+	\begin{itemize}
+		\item Mistura de n-hexano ($C_{6} H_{14}$) + n-heptano ($C_{7} H_{16}$) por
+		exemplo é possível de assumirmos como ideal
+		\item Mitura de n-hexano ($C_{6} H_{14}$) + n-dodecano ($C_{12} H_{26}$) já
+		não é mais possivel de assumir como ideal.
+	\end{itemize}
+\end{frame}
+
 
 
 
