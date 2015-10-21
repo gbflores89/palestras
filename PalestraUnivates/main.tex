@@ -105,7 +105,7 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 \medskip
 \textit{gbflores89@gmail.com} % Your email address
 } 
-\date{\today} % Date, can be changed to a custom date
+\date{22 de Outubro de 2015} % Date, can be changed to a custom date
 
 \begin{document}
 \logo{\pgfuseimage{logobig}}
@@ -162,14 +162,14 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 	\end{itemize}
 \end{frame}
 
-\subsection{Simuladores}
+\subsection*{Simuladores}
 
 \begin{frame}
 	\frametitle{O que são simuladores}
 	\begin{columns}[c]
 		\column{.5\textwidth}
 		\begin{itemize}
-			\item Qualquer programa que transforme um ''coisa'' real 
+			\item Qualquer programa que transforme uma ''coisa'' real 
 			em um (ou vários) sistema(s) de equações.
 			\note<1>{Simuladores são todos os programas que podemos transformar sistemas
 			reais em modelos para “prever o futuro”.\\ .\\
@@ -200,8 +200,10 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 	\frametitle{O que são simulador de processo?}
 	\begin{columns}[c] 
 		\column{.3\textwidth}
-		Em simuladores de processo a ``coisa'' passa a ser a planta industrial, ou
+		\begin{itemize}
+		  \item Em simuladores de processo a ``coisa'' passa a ser a planta industrial, ou
 		parte dela.
+		\end{itemize}
 		\column{.7\textwidth}
 		\begin{center}
 			\includegraphics[width=0.5\textwidth]
@@ -304,17 +306,7 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 	como um todo em um unico sistema de equações e resolve tudo de uma vez só}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Simuladores de blocos}
-	Fazer aqui uma figura com vários blocos para demonstrar o simulador funcionando
-\end{frame}
-
-{
-\begingroup
-\setbeamertemplate{headline}{}
-\addtobeamertemplate{frametitle}{\vspace*{-0.9\baselineskip}}{}
-\setbeamertemplate{headline}{}
-\begin{frame}
+\begin{frame}[plain]
 	\frametitle{EMSO}
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{img/EMSO_1.PNG}
@@ -327,7 +319,7 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 	No caso este exemplo é um pequeno pedaço de uma plataforma de pertróleo}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[plain]
 	\frametitle{EMSO}
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{img/EMSO_2.PNG}
@@ -339,9 +331,7 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 	simulador adequado }
 \end{frame}
 
-\endgroup
-}
-\subsection{Modelos}
+\subsection*{Modelos}
 
 \begin{frame}
 	Ok já sabemos o que são simuladores, mas como eles funcionam?\\
@@ -351,12 +341,7 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 	Como são estes \code{modelos}?
 \end{frame}
 
-{
-\begingroup
-\setbeamertemplate{headline}{}
-\addtobeamertemplate{frametitle}{\vspace*{-0.9\baselineskip}}{}
-\setbeamertemplate{headline}{}
-\begin{frame}
+\begin{frame}[plain]
 	\frametitle{Modelo EMSO}
 	\footnotesize
 		\begin{columns}[t] 
@@ -375,7 +360,7 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 	simplificar mais ainda.}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[plain]
  	\frametitle{Modelo simplificado}
 %  	\framesubtitle{Não façam isso em casa!!}  
 	\begin{columns}[c] 
@@ -402,8 +387,6 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 			\end{block}
 	\end{columns}
 \end{frame}
-\endgroup
-}
 
 
 \begin{frame}
@@ -455,12 +438,13 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
  				\begin{equation*}
 				P_{in}=P_{out}
  				\end{equation*}\\
-			\item <2->Mas em um modelo simplificado podemos desconsiderar a curva da
+			\pause
+			\item Mas em um modelo simplificado podemos desconsiderar a curva da
 			bomba
 		\end{itemize}
 		\column{.5\textwidth}
 		\begin{center}
-			\includegraphics<2->[width=0.65\textwidth]{img/curva_bomba.jpg}
+			\includegraphics[width=\textwidth]{img/curva_bomba2.jpg}
 		\end{center}
 	\end{columns}
 \end{frame}
@@ -496,9 +480,15 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 				mistura.
 			\end{itemize}
 	\end{columns}
+	\note{Para as substâncias puras, somente podemos utilizar as equações de
+	estado, isso porque os modelos de $G^E$ são desenvolvidos para misturas\\.\\
+	Todos modelos de $G^E$ são desenvolvidos considerando que o liquido de uma
+	substância pura é uma solução ideal, sendo uma solução ideal todos as
+	propriedades são do componente puro. \\.\\
+	Vamos ver adiante cada classe de modelo}
 \end{frame}
 
-\subsection{Equações de Estado}
+\subsection*{Equações de Estado}
 
 \begin{frame}
 	\frametitle{Equações de Estado (Equations of State - EOS)}
@@ -508,10 +498,14 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 		\item Exemplos: gás ideal, cúbicas (PR, SRK, ...), tipo Virial, SAFT e
 		PC-SAFT
 		\pause
+		\item[]
 		\item Partindo de uma EOS e do $Cp^{GI}$ é \textbf{possível calcular todas
 		as demais propriedades}: $u$, $h$, $s$, ...
 		\item São desenvolvidas para substâncias puras (a maioria)
 	\end{itemize}
+	\note<1>{São equações para relacionar P, v e T.\\
+	O cálculo das demais propriedades é possivel devido as derivações da
+	equação de estado e das relações de Maxwell}
 \end{frame}
 
 \begin{frame}
@@ -534,7 +528,7 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 \begin{frame}
 	\frametitle{Equações cúbicas - Equação de van der Waals}
 	\begin{columns}[c] 
-	\column{.7\textwidth}
+	\column{.6\textwidth}
 		\begin{itemize}
 		\item Proposta por van der Waals em 1873
 		\item Considera as moléculas como esferas \\
@@ -551,9 +545,11 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 	\end{columns}
 	\begin{columns}
 		\column{.75\textwidth}
+		\begin{footnotesize}
 			\begin{exampleblock}{Johannes Diderik van der Waals, Nobel em Física - 1910}
 				... for his studies of the physical state of liquids and gases..
 			\end{exampleblock}
+		\end{footnotesize}
 	\end{columns}
 \end{frame}
 
@@ -587,42 +583,50 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 
 \begin{frame}
 	\frametitle{Equações cúbicas - Equação de van der Waals}
-	\begin{itemize}
-		\item<1>Os parâmetros $a$ e $b$ da equação de vdW podem ser obtidos a
-		partir do ponto crítico: 
-	\end{itemize}
-	\begin{equation*}
-	\left(\frac{\partial P}{\partial v}\right)_{T_r} = \left(\frac{\partial^2
-	P}{\partial v^2}\right)_{T_r}=0
-	\end{equation*}
-	\pause
-	\begin{equation*}
-	\Downarrow
-	\end{equation*}
-	\begin{equation*}
-	a=\frac{27}{64}\frac{\left(RT_c\right)^2}{P_c} \qquad
-	b=\frac{RT_c}{8P_c} 
-	\end{equation*}
+	
+	\begin{columns}
+		\column{.5\textwidth}
+		\begin{itemize}
+			\item Os parâmetros $a$ e $b$ da equação de vdW podem ser obtidos a
+			partir do ponto crítico: 
+		\end{itemize}
+			\begin{equation*}
+			\left(\frac{\partial P}{\partial v}\right)_{T_r} = \left(\frac{\partial^2
+			P}{\partial v^2}\right)_{T_r}=0
+			\end{equation*}
+			\pause
+			\begin{equation*}
+			\Downarrow
+			\end{equation*}
+			\begin{equation*}
+			a=\frac{27}{64}\frac{\left(RT_c\right)^2}{P_c} \qquad
+			b=\frac{RT_c}{8P_c} 
+			\end{equation*}
+		
+		\column{.5\textwidth}
+			\includegraphics[width=0.8\textwidth]{img/ecuaciones-de-estado.png}
+	\end{columns}
+	 \note<1>{Ali no ponto ``c'' está a um dos pontos mais importantes para as
+	 equações cubicas provenientes da equação de vdW, é o ponto crítico da
+	 substância, onde o vapor e o liquíquido assumem as mesmas propriedades.\\.\\
+	 Ali também ocorre um ponto de inflexão onde a primeira e a segunda derivadas
+	 da equação são zeros.\\.\\
+	 Ahh, lembrando que abaixo do ponto crítico, dentro do envelope de faze a
+	 curva da equação não tem sentido físico, é apenas uma consequencia matemática}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Comportamento $PvT$ de acetonitrila calculado com vdW}
-	Colocar aqui vdW com $T_r = 1$ em vermrlho para demosntrar as derivadas = 0
-	\begin{center}
-		\includegraphics[width=0.6\textwidth]{img/Acetonitrila.png} 
-	\end{center}
-\end{frame}
-
-\begin{frame}
+\begin{frame}[plain]
 	\frametitle{Algumas Equações Cúbicas}
 	Outras equações cúbicas:
 	\begin{equation*}
 		P= \frac{RT}{v-b}-\frac{a(T)}{(v-\epsilon b)(v+\epsilon b)}
 	\end{equation*}
+	\\
 	\begin{equation*}
 		a= \frac{\Psi \alpha(T_r) R^2 {T_c}^2}{P_c} \quad b= \Omega \frac{RT_c}{P_c}
 		\quad T_r = \frac{T}{T_c} \quad P= \frac{P}{P_c}
 	\end{equation*}
+	\\
 	\begin{table}
 		\begin{tabular}{cc|ccccc}
 		\hline
@@ -641,24 +645,19 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 		\hline
 		\end{tabular}
 	\end{table}
+	\note{Aqui estão algumas modificações da equação de vdW, e pode ser escrita de
+	uma forma genérica, o que é estremamente util pois podemos encontrar as
+	propriedades em função dos parâmetros ou seja, derivamos apenas uma vez}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Comportamento $PvT$ de acetonitrila calculado com PR}
 	\begin{center}
-		\includegraphics[width=0.75\textwidth]{img/Acetonitrila.png} 
+		\includegraphics[width=0.7\textwidth]{img/Acetonitrila.png} 
 	\end{center}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Comportamento $PvT$ de acetonitrila calculado com GI}
-	Se possível mostrar com GI igual a essa img
-	\begin{center}
-		\includegraphics[width=0.6\textwidth]{img/Acetonitrila.png} 
-	\end{center}
-\end{frame}
-
-\subsection{Regras de Mistura}
+\subsection*{Regras de Mistura}
 
 \begin{frame}
 	\frametitle{Regras de Mistura}
@@ -681,7 +680,7 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 			\item A primeira regra de mistura veio pela necessidade da primeira EoS
 			\begin{block}{Regra de mistura de van der Waals}
 			\begin{equation*}
-			a = \sum_i\sum_j{y_iy_ja_{ij}} \quad a_{ij}= \sqrt{a_i a_j}
+			a = \sum_i\sum_j{y_iy_ja_{ij}}(1-k_{ij}) \quad a_{ij}= \sqrt{a_i a_j}
 			\end{equation*}
 			\begin{equation*}
 			b = \sum_i{b_iy_i}
@@ -689,14 +688,47 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 			\end{block}
 		\end{itemize}
 	\end{columns}
+	
+	\note<1>{Então, temos como calcular os componentes puro, mas sabemos que na
+	industria não encontramos apenas componentes puros, e como podemos fazer para
+	mistura-los?\\.\\
+	Como vdW é um cara inteligente e sabia que deveria servir para misturas
+	também, ele decidiu combinar os parâmetros das equações, assim surgiu a
+	primeira regra de mistura, uma das mais simples que encontramos na literatura}
 \end{frame}
 
-\begin{frame}
+\begin{frame} 
 	\frametitle{Outras regras de mistura}
-	Comentar sobre a as outras regras de misturas
+		\begin{columns}[c]
+	\column{.7\textwidth}
+	Algumas regras de misturas mais complexas
+	\begin{itemize}
+		\item Huron–Vidal mixing rule (MHV)(1990)
+		\item Predictive Soave-Redlich-Kwon Model (PSRK) (1991)
+		\item Universal Mixing Rule (UMR) (2004)
+		\item Universal and Generic Mixing Rule (UGMR)(2010)
+		\item A Self-Consistent Mixing Rule (SCMR)(2012)
+	\end{itemize}
+	\column{.35\textwidth}
+			\begin{block}{Huron–Vidal mixing rule}
+			\begin{equation*}
+			a = b \left[ \sum  x_i \left(\frac{a_i}{b_i} \right) + \frac{G^E}{C^*}
+			\right] 
+			\end{equation*}
+			\begin{equation*}
+			b = \sum_i{b_iy_i}
+			\end{equation*}
+			\end{block}
+	\end{columns}
+	\note{Entretanto, posteriormente apareceram regras de misturas mais
+	elaborada em que foram introduzidos um parâmetro $k_{ij}$ para melhorar
+	o resultado comparando com os dados experimentais.\\.\\
+	Quando foi introduzido esse parâmetro binário $k_{ij}$ ajustado também tiveram
+	a idéia de substituir os parâmetros de interação por um modelo de coeficiente
+	de atividade (modelos de $G^E$) }
 \end{frame}
 
-\subsection{Modelos de $G^E$}
+\subsection*{Equilíbrio de fases}
 
 \begin{frame}
 	\frametitle{Modelos de $G^E$}
@@ -720,10 +752,20 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 \end{frame}
 
 \begin{frame}
-	\frametitle{Lei de Raoult}
-	A Lei de Raoult considera a fase líquida como ideal, com esta preposição temos
-	$\gamma = 1$
-	Colocar o desenvolvimento da Lei de Raoult
+	\frametitle{Lei de Raoult (Solução ideal)}
+		\begin{columns}[c]
+		\column{.4\textwidth}
+			A Lei de Raoult considera a fase líquida como ideal, com esta preposição temos
+			$\gamma = 1$
+		\begin{equation*}
+		P y_i = x_i P_i^{sat}
+		\end{equation*}
+		\column{.6\textwidth}
+			\includegraphics[width=0.8\textwidth]{img/Raoultov_zakon.png}
+	\end{columns}
+	\note{A Lei de Raout na verdade nem deveria estar aqui, pois ela considera o
+	liquido como uma solução ideal.\\.\\
+	Entretanto em misturas mais complexas não podemos usar a lei de raout}
 \end{frame}
 
 \begin{frame}
@@ -731,222 +773,626 @@ LAB. VIRTUAL DE PREDIÇÃO DE PROPRIEDADE \\ % Your institution for the title pa
 	Entetanto sabemos que são apenas casos raros que podemos considerar a fase
 	líquida como ideal.
 	\begin{itemize}
-		\item Mistura de n-hexano ($C_{6} H_{14}$) + n-heptano ($C_{7} H_{16}$) por
-		exemplo é possível de assumirmos como ideal
-		\item Mitura de n-hexano ($C_{6} H_{14}$) + n-dodecano ($C_{12} H_{26}$) já
-		não é mais possivel de assumir como ideal.
+		\item Mistura de n-hexano (\ce{C6H14}) + n-heptano
+		(\ce{C7H16}) por exemplo é possível de assumirmos como ideal
+		\item Mitura de n-hexano (\ce{C6H14}) + n-dodecano (\ce{C12H26}) já não é
+		mais possivel de assumir como ideal.
+	\end{itemize}
+	\pause
+		\begin{equation*}
+		P y_i = x_i \gamma_i P_i^{sat}
+		\end{equation*}
+	\note<1>{Então, em casos não ideais, não podemos mais utilizar a lei de
+	Raoult, que é muito limitada. Devemos utilizar a Lei de Raout Modificada, o
+	que entre aspas é só colocar aquele $\gamma$ ali, mas já vou mostrar o
+	desenvolvimento para vocês}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Equilíbrio Líquido - Vapor}
+	\begin{columns}
+	\column{.5\textwidth}
+	
+	\begin{itemize}
+		\item Equilíbrio Mecânico, $P^l=P^v$
+		\item Equilíbrio Térmico, $T^l=T^v$
+		\item Equilíbrio Químico, $\mu_i^l=\mu_i^v$
+	\end{itemize}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Equilíbrio Líquido - Vapor}
+	\begin{itemize}
+		\item No equilíbrio, $\mu_i^l=\mu_i^v$ o que implica em
+		$\hat{f}_i^l=\hat{f}_i^v$
+		\item que, com a definição de coefciente de fugacidade para ambas
+		as fases, se torna:
+		\begin{equation*}
+		P y_i \hat{\phi}_i^v = P x_i \hat{\phi}_i^l
+		\end{equation*}
+		\item e consequentemente:
+		\begin{equation*}
+		y_i \hat{\phi}_i^v = x_i \hat{\phi}_i^l
+		\end{equation*}
+		\item Para uma substância pura:
+		\begin{equation*}
+		\phi_i^v =\phi_i^l =\phi_i^{sat}
+		\end{equation*}
 	\end{itemize}
 \end{frame}
 
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
 \begin{frame}
-	\frametitle{}
+	\frametitle{Equilíbrio Líquido - Vapor}
+	\begin{itemize}
+		\item Utilizando o coeficiente de fugacidade para a fase vapor e
+		coeficiente de atividade para a fase líquida, a igualdade de
+		fugacidade se torna:
+		\begin{equation*}
+		P y_i \hat{\phi}_i^v = x_i \gamma_i f_i
+		\end{equation*}
+		\item Para baixas pressões usualmente assumimos um vapor se
+		comportando como gás ideal e que $f_i \cong P_i^{sat}$:
+		\begin{equation*}
+		P y_i = x_i \gamma_i P_i^{sat}
+		\end{equation*}
+	\end{itemize}
 \end{frame}
- 
- 
- 
+
 \begin{frame}
-\frametitle{Teste}
-\framesubtitle{The proof uses \textit{reductio ad absurdum}.}
-\begin{theorem}
-There is no largest prime number.
-\end{theorem}
-\begin{proof}
-\begin{enumerate}
-\item<1-| alert@1> Suppose $p$ were the largest prime number.
-\item<2-> Let $q$ be the product of the first $p$ numbers.
-\item<3-> Then $q+1$ is not divisible by any of them.
-\item<1-> But $q + 1$ is greater than $1$, thus divisible by some prime
-number not in the first $p$ numbers.\qedhere
-\end{enumerate}
-\end{proof}
+	\frametitle{Equilíbrio Líquido - Vapor}
+	\begin{itemize}
+		\item Utilizando o coeficiente de fugacidade para a fase vapor e
+		coeficiente de atividade para a fase líquida, a igualdade de
+		fugacidade se torna:
+		\begin{equation*}
+		P y_i \hat{\phi}_i^v = x_i \gamma_i f_i
+		\end{equation*}
+		\item Para baixas pressões usualmente assumimos um vapor se
+		comportando como gás ideal e que $f_i \cong P_i^{sat}$:
+		\begin{equation*}
+		P y_i = x_i \gamma_i P_i^{sat}
+		\end{equation*}
+	\end{itemize}
+	\note{Agora com o Lei de Raout desenvolvida, ali no lugar do $\gamma_i$ que
+	colocaremos o resultado do modelo de $\gamma$}
+\end{frame}
+
+\section{Modelos de $G^E$}
+
+\begin{frame}
+	\frametitle{Modelos de $G^E$}
+	\begin{columns}
+		\column{.5\textwidth}
+		Modelos Ajustados
+		\begin{itemize}
+			\item Não preditivos
+			\item Muitos parâmetros
+			\item Melhores resultados
+		\end{itemize}
+
+		\column{.5\textwidth}
+		Modelos ``Teóricos''
+		\begin{itemize}
+			\item Preditivos
+			\item Número de parâmetros consideravelmente menor
+			\item Melhor embasamento teórico
+		\end{itemize}
+	\end{columns}
+\end{frame}
+
+
+
+\subsection*{Modelos ajustados}
+
+\begin{frame}
+	\frametitle{Modelos de $G^E$ ajustados a dados experimentais}
+	\begin{itemize}
+		\item São modelos com pouca fundamentação teórica
+		\item Modelos que dependem de parâmetros binários
+		\begin{itemize}
+			\item Cada par de substâncias tem um conjunto de parâmetros
+		\end{itemize}
+	\end{itemize}
+	\note{São modelos geralmente mais simples, e por serem ajustados, geralmente
+	produzem resultados melhores.\\.\\
+	São modelos muito utilizados quando se quer ver o comportamento de uma mstura
+	espessifica e já estão disponiveis os parâmetros. O grande problema destes
+	modelos é que para cada par de substâncias é necessário um conjunto de
+	parâmetros.}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Margules}
+	Para uma mistura binária
+		\begin{equation*}
+		\left\{\begin{matrix}
+		\ln \gamma_1 = \left [ A_{12}+2 \left(A_{21}-A_{12} \right)x_1 \right]x_2^2
+		\\ 
+		\\
+		\ln \gamma_2 = \left [ A_{21}+2 \left(A_{12}-A_{21} \right)x_2 \right]x_1^2
+		\end{matrix}\right.
+		\end{equation*}
+		\pause
+		Se $A_{12} = A_{21} = A$
+		\begin{equation*}
+		\left\{\begin{matrix}
+		\ln \gamma_1 = Ax_2^2
+		\\ \\
+		\ln \gamma_2 = Ax_1^2
+		\end{matrix}\right.
+		\end{equation*}
+		\note<1>{Um modelo bastante simples e bem didático é o modelo de margules de
+		dois parâmetros, simples, e rápido para calcular em aula, bom para
+		demosntração entretanto não aceita misturas com grande não idealidade, o que
+		para a industria já não é algo tão desejavel.\\.\\
+		Uma simplificação que pode ser feita para sistemas simétricos é o modelo de
+		margules de um parâmetro}
+\end{frame}
+
+\begin{frame}
+	\frametitle{NRTL (Non-Random Two-Liquid)}
+	Para uma mistura binária
+		\begin{equation*}
+		\left\{\begin{matrix}
+		\ln \gamma_1 = x_2^2 \left [\tau_{21} \left ( \frac{G{21}}{x_1+x_2G_{21}}
+		\right )^2 + \frac{\tau_{12} G_{12}}{\left ( x_2+x_1 G_{12} \right )^2}\right]
+		\\ 
+		\\
+		\ln \gamma_2 = x_1^2 \left [\tau_{12} \left ( \frac{G{12}}{x_2+x_1G_{12}}
+		\right )^2 + \frac{\tau_{21} G_{21}}{\left ( x_1+x_2 G_{21} \right )^2}\right]
+		\end{matrix}\right.
+		\end{equation*}
+		Sendo
+		\begin{equation*}
+		\left\{\begin{matrix}
+		\ln G_{12} = -\alpha_{12}\tau_{12}
+		\\ \\
+		\ln G_{21} = -\alpha_{21}\tau_{21}
+		\end{matrix}\right.
+		\quad
+		\textup{e}
+		\quad
+		\left\{\begin{matrix}
+		\ln \tau_{12} = \frac{\Delta g_{12}}{RT}
+		\\ \\
+		\ln \tau_{21} = \frac{\Delta g_{21}}{RT}
+		\end{matrix}\right.
+		\end{equation*}
+		\note{Dos modelos um dos de maior aplicação é o NRTL, um modelo já melhor
+		elaborado e digamos para a tecnolgia de hoje, até fácil de ser calculado à
+		mão em um sistema binário.\\.\\
+		É um modelo que já aceita o equilíbrio líquido líquido, e faz tudo que é tipo
+		de cálculo líquido vapor.\\.\\
+		Agora calcular ele para uma mistura de 3 substâncias já é algo mais
+		trabalhoso, principalemnte se pegar a forma mais rigorosa do modelo.\\.\\
+		E novamente, para cada par de substâncias é necessário uma matriz de
+		parâmetros diferente}
+\end{frame}
+
+\begin{frame}
+	\frametitle{NRTL (Non-Random Two-Liquid)}
+	Para a mistura multicomponente
+		\begin{equation*}
+			\ln{\gamma_i} = \frac{\sum_{j=1}^n{x_j \tau_{ji} G_{ji} }}
+				{\sum_{k=1}^n{x_k G_{ki} }} +
+			\sum_{j=1}^n\frac{x_j G_ij}{\sum_{k=1}^n x_k G_{kj}}
+			\left ( \tau_{ij}- \frac{\sum_{m=1}^n x_m \tau_{mj} G_{mj} }
+			{\sum_{k=1}^n{x_k G_{kj} }} \right )
+		\end{equation*}
+		\\
+		\begin{equation*}
+			G_{ij} = \exp \left ( -\alpha_{ij}\tau_{ij} \right )
+		\end{equation*}
+		\\
+		\begin{equation*}
+			\alpha_{ij} = \alpha_{ij0} + \alpha_{ij1}T
+		\end{equation*}
+		\\
+		\begin{equation*}
+			\tau_{ij} = A_{ij} + \frac{B_{ij}}{T} + \frac{C_{ij}}{T^2} +D_{ij}\ln T
+			+E_{ij}T^{F_{ij}}
+		\end{equation*}
+\end{frame}
+
+\subsection*{Modelos teóricos}
+
+\begin{frame}
+	\frametitle{Modelos de $G^E$ com melhor embasamento teórico}
+	\begin{columns}[c]
+		\column{.3\textwidth}
+		\begin{itemize}
+		  	\item UNIQUAC
+			\item UNIFAC
+			\item PSRK
+			\item COSMO-SAC
+			\item COSMO-RS
+			\item F-SAC
+		\end{itemize}
+		\pause
+		\column{.4\textwidth}
+		\begin{block}{}
+			\begin{equation*}
+				\ln{\gamma_i} = \ln{\gamma_i^{comb}} + \ln{\gamma_i^{res}}
+			\end{equation*}
+		\end{block}
+			
+	\end{columns}
+	
+	\note<1>{Agora os modelos como daria para dizer ``mais teóricos'', dá para
+	calcular a mão? olha até da, o UNIQUAC vai com um certo grau de paciência mas
+	é sempre prefirivel um computador.\\.\\
+	Uma coisa interessante é que estes modelos trabalham com duas contribuições.
+	uma combinatorial (forma e tamanho) e uma residual (interação binária)}
+\end{frame}
+
+\begin{frame}
+	\frametitle{UNIQUAC (UNIversal QUAsiChemical)}
+		\begin{columns}[t]
+		\column{.4\textwidth}
+			\begin{block}{}
+				\begin{equation*}
+					\ln{\gamma_i} = \ln{\gamma_i^{comb}} + \ln{\gamma_i^{res}}
+				\end{equation*}
+			\end{block}
+			\begin{itemize}
+				\item [$r_i$] molécula pura
+				\item [$q_i$] molécula pura
+				\item [$\tau_{ij}$] interação binária
+				\begin{itemize}
+					\item Um conjunto para cada par de substâncias
+				\end{itemize}
+			\end{itemize}
+		
+		\column{.7\textwidth}
+		\begin{equation*}
+			\ln{\gamma_i^{comb}} = \left(1-V_i+\ln V_i \right)
+			- \frac{z}{2}q_i \left(1- \frac{V_i}{F_i} + \ln{\frac{V_i}{F_i}} \right)
+		\end{equation*}
+		\begin{equation*}
+			V_i = \frac{r_i}{\sum_j r_j x_j} \qquad F_i = \frac{q_i}{\sum_j q_j x_j}
+		\end{equation*}
+		\noindent\rule{\textwidth}{0.1pt}
+		\begin{equation*}
+			\ln{\gamma_i^{res}} = q_i \left(1- \ln{\frac{\sum_j q_j x_j \tau_{ji}}{\sum_j
+			q_j x_j}} - \sum_j{\frac{q_j x_j \tau_{ij}}{\sum_k q_k x_k \tau_{kj}}}
+			\right)
+		\end{equation*}
+		\begin{equation*}
+			\tau_{ij} = e^{\frac{-\Delta u_{ij}}{RT}}
+		\end{equation*}
+	\end{columns}
+	\note{O UNIQUAC é um modelo muito mais elaborado, ele já utiliza parâmetros
+	das moléculas puras, como o $r_i$ e o $q_i$ entretanto os parâmetros de
+	interação continuam sendo ajustados para cada par de moléculas}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{UNIFAC~(Do) -- Contribuição de Grupos}
+	\begin{columns}[t]
+		\column{.4\textwidth}
+			\begin{center}
+				\includegraphics[width=\textwidth]{img/UNIFACDO_2015.png}
+			\end{center}
+		\column{.6\textwidth}
+			\begin{itemize}
+				\item Parte do mesmo equacionamento do modelo UNIQUAC
+				\item As moléculas agora são grupos funcionais
+				\begin{itemize}
+					\item \ce{CH3}, \ce{CH2}, \ce{CH}, \ce{CH}
+					\item \ce{H2O} (água)
+					\item \ce{OH} (álcool)
+					\item \ce{ACH}, \ce{AC} (aromático)
+					\item \ce{CH3NH2} (amina primária)
+				\end{itemize}
+				\item A interação binária é entre os grupos
+			\end{itemize}
+	\end{columns}
+	\note{O modelo UNIFAC é uma derivação do modelo UNIQUAC, o seu equacionamento
+	é basicamente o mesmo, entretanto passa a não utilizar as moléculas como
+	parâmetros e sim um grupo fuincional.\\.\\
+	Com a implementação dos grupos funcionais o modelo ganhou a capacidade
+	preditiva, ou seja, não é necessário o o ajuste para cada molécula}
+\end{frame}
+
+\begin{frame}
+	\frametitle{COSMO-RS -- Teoria de superfície de contato}
+	\begin{columns}[c]
+		\column{.3\textwidth}
+			\begin{center}
+				\includegraphics[width=0.65\textwidth]{img/contato1}
+			\end{center}
+
+		\column{.7\textwidth}
+		\begin{itemize}
+			\item Primeiramente aplica-se a técnica COSMO Klamt (1993) para cada
+			molécula isolada
+			\item São determinadas as cargas aparentes induzidas pela molécula em uma
+			\emph{cavidade} \pause
+			\item Várias aproximações são assumidas nesta etapa:
+			\begin{itemize}
+			\item Cavidade formada por esferas de raios fixos envolvendo os átomos
+			\item Imersa em um condutor perfeito
+			%\item Métodos utilizados nos cálculos: AM1, RM1, DFT, MP2, etc.
+			\item Correções para os elétrons fora da cavidade
+			\item \ldots
+		\end{itemize}
+		\end{itemize}
+	\end{columns}
+	\note<1>{Agora o modelo não utiliza mais contribuição de grupos e toda a parte
+	combinatorial é referente a molécula inteira, assim como o termo residual,
+	entretanto continua sendo um modelo preditivo pois os parâmetros são
+	calculados pelo metodo COSMO, que utiliza termodinâmica estatistica e calculos
+	quanticos.\\.\\
+	Métodos utilizados nos cálculos: AM1, RM1, DFT, MP2, etc.}
+\end{frame}
+
+\begin{frame}
+\frametitle{COSMO-RS -- Teoria de superfície de contato}
+\begin{columns}[c]
+\column{.3\textwidth}
+\begin{center}
+\includegraphics[width=0.7\textwidth]{img/contato2}
+\end{center}
+\column{.7\textwidth}
 \begin{itemize}
-\item 2 is prime (two divisors: 1 and 2).
-\pause
-\item 3 is prime (two divisors: 1 and 3).
-\pause
-\item 4 is not prime (\alert{three} divisors: 1, 2, and 4).
+    \item Na teoria de superfícies de contato presente no COSMO-RS Klamt 1995,
+    	as moléculas são colocadas sequencialmente em contato \pause
+    \item A cada contato entre moléculas, o condutor é parcialmente excluído
+    \item Se as moléculas forem totalmente circundadas por outras moléculas, a solução \emph{real} seria obtida
 \end{itemize}
-\end{frame}
- %------------------------------------------------
-
-\begin{frame}
-\frametitle{Bullet Points}
-\begin{itemize}
-\item Lorem ipsum dolor sit amet, consectetur adipiscing elit
-\item Aliquam blandit faucibus nisi, sit amet dapibus enim tempus eu
-\item Nulla commodo, erat quis gravida posuere, elit lacus lobortis est, quis porttitor odio mauris at libero
-\item Nam cursus est eget velit posuere pellentesque
-\item Vestibulum faucibus velit a augue condimentum quis convallis nulla gravida
-\end{itemize}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Blocks of Highlighted Text}
-\begin{block}{Block 1}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-\end{block}
-
-\begin{block}{Block 2}
-Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis magna at risus dictum tempor eu vitae velit.
-\end{block}
-
-\begin{block}{Block 3}
-Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenatis rutrum, ipsum neque consectetur orci, sed blandit justo nisi ac lacus.
-\end{block}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Multiple Columns}
-\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
-
-\column{.45\textwidth} % Left column and width
-\textbf{Heading}
-\begin{enumerate}
-\item Statement
-\item Explanation
-\item Example
-\end{enumerate}
-
-\column{.5\textwidth} % Right column and width
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-
 \end{columns}
 \end{frame}
 
-%------------------------------------------------
-\section{Second Section}
-%------------------------------------------------
+\begin{frame}
+\frametitle{Perfil sigma -- $p(\sigma)$}
+\begin{columns}[c]
+\column{.6\textwidth}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{img/perfilsigma}
+\end{center}
+\column{.5\textwidth}
+\begin{itemize}
+    \item Para o tratamento de termodinâmica estatística,
+    	a distribuição 3D de cargas aparentes é projetada em um histograma
+    \item Esta distribuição de probabilidades é então utilizada para
+    	calcular as interações de substâncias em mistura
+\end{itemize}
+\end{columns}
+\pause
+\scriptsize
+\begin{itemize}
+\item É sempre \textbf{desejável} expressar as propriedades de uma solução
+em termos que podem ser calculados completamente a partir das propriedades dos
+componentes puros -- Prausnitz (1999).
+\end{itemize}
+\end{frame}
 
 \begin{frame}
-\frametitle{Table}
-\begin{table}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\caption{Table caption}
-\end{table}
+	\frametitle{Programa JCOSMO: perfil sigma de substâncias puras}
+	\begin{columns}[t]
+		\column{.65\textwidth}
+		\begin{center}
+			\includegraphics[width=1\textwidth]{img/jcosmoPerfilSigma}
+		\end{center}
+	
+		\column{.3\textwidth}
+		\begin{center}
+			\includegraphics[width=1\textwidth]{img/jcosmo_qr}
+		\end{center}
+	\end{columns}
 \end{frame}
-
-%------------------------------------------------
+ 
 
 \begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
+  \frametitle{Programa JCOSMO: cálculos de coef. de atividade e VLE}
+	\begin{columns}[t]
+		\column{.6\textwidth}
+		\begin{center}
+			\includegraphics[width=1\textwidth]{img/jcosmo1}
+		\end{center}
+	
+		\column{.3\textwidth}
+		\begin{center}
+			\includegraphics[width=1\textwidth]{img/jcosmo_qr}
+		\end{center}
+	\end{columns}
 \end{frame}
-
-%------------------------------------------------
-
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Verbatim}
-\begin{example}[Theorem Slide Code]
-\begin{verbatim}
-\begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}\end{verbatim}
-\end{example}
-\end{frame}
-
-%------------------------------------------------
 
 \begin{frame}
-\frametitle{Figure}
-Uncomment the code on this slide to include your own image from the same directory as the template .TeX file.
-%\begin{figure}
-%\includegraphics[width=0.8\linewidth]{test}
-%\end{figure}
+  \frametitle{Programa JCOSMO: Visualização das superfícies}
+	\begin{columns}[t]
+		\column{.6\textwidth}
+		\begin{center}
+			\includegraphics[width=1\textwidth]{img/jcosmo2}
+		\end{center}
+	
+		\column{.3\textwidth}
+		\begin{center}
+			\includegraphics[width=1\textwidth]{img/jcosmo_qr}
+		\end{center}
+	\end{columns}
 \end{frame}
 
-%------------------------------------------------
 
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Citation}
-An example of the \verb|\cite| command to cite within the presentation:\\~
-
-This statement requires citation \cite{p1}.
+\subsection{F-SAC}
+\begin{frame}[plain]
+  \frametitle{Novo modelo F-SAC: Motivação}
+  \begin{itemize} 
+    \item Embora os modelos COSMO-RS contenham características teóricas excepcionais,
+    	em geral os resultados obtidos podem ser considerados de qualidade semi-quantitativa
+    \item Boa precisão normalmente é obtida através de modificações empíricas.
+  \end{itemize}
+  \begin{center}
+  \includegraphics[width=0.55\textwidth]{img/fsac}
+  \end{center}
 \end{frame}
-
-%------------------------------------------------
 
 \begin{frame}
-\frametitle{References}
-\footnotesize{
-\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
-\bibitem[Smith, 2012]{p1} John Smith (2012)
-\newblock Title of the publication
-\newblock \emph{Journal Name} 12(3), 45 -- 678.
-\end{thebibliography}
-} 
+\frametitle{Diferença entre COSMO-SAC e F-SAC}
+\begin{columns}[c]
+\column{.6\textwidth}
+\begin{center}
+  \includegraphics[width=0.75\textwidth]{img/perfil1}\\
+  \includegraphics[width=0.75\textwidth]{img/perfil2}
+\end{center}
+\column{.5\textwidth}
+\pause
+\begin{itemize}
+  	\item O equacionamento dos modelos é idêntico, a diferença
+  		está no perfil sigma
+    % \item Área superficial dos grupos é idêntica
+    \item No F-SAC há uma fração da área neutra
+    	outras duas frações com cargas
+\end{itemize}
+\end{columns}
 \end{frame}
-
-%------------------------------------------------
 
 \begin{frame}
-\Huge{\centerline{The End}}
+  \frametitle{Representação do perfil sigma}
+  \begin{description}
+	\item [$p_i(\sigma)$] $= \sum_k{\nu_k^{(i)}p_k(\sigma)}$
+ 	\end{description}
+  \begin{center}
+  \includegraphics[width=0.45\textwidth]{img/perfil_fsac}
+  \end{center}
 \end{frame}
 
-%----------------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Parâmetros do modelo}
+  \begin{itemize}
+    \item Parâmetros a serem calibrados com base em dados experimentais,
+    	para cada grupo funcional $k$:
+	\begin{description}
+	\item [$Q_k$] área total do grupo, valor inicial é determinado com base em cálculos
+		COSMO
+	\item [$Q_k^+$] área do grupo funcional com carga positiva
+	\item [$Q_k^-$] área do grupo funcional com carga negativa
+	\item [$\sigma_k^+$] densidade de carga do segmento positivo
+ 	\end{description}
+    \item Outros parâmetros determinados:
+	\begin{description}
+	\item [$Q_k^\circ$]  $= Q_k - Q_k^+ - Q_k^-$ é a área neutra do grupo
+	\item [$\sigma_k^-$] $= \sigma_k^+Q_k^+ / Q_k^-$ é densidade de carga do segmento negativo
+ 	\end{description}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Recomendaçõs para definir grupos funcionais}
+  \begin{enumerate}
+    \item A geometria do grupo funcional (ou seja, ângulo de ligação, etc.)
+    deve ser a mesma independente da molécula em que o grupo ocorra.
+    \item Cada átomo no grupo funcional deve ter aproximadamente a mesma
+    carga em todas as moléculas em que o grupo ocorra, e o \textbf{grupo deve
+    ser aproximadamente neutro}.
+    \item Cada grupo funcional deve ser a menor entidade que a molécula pode
+    ser dividida em uma coleção de grupos neutros.    
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[plain]
+  \frametitle{Seleção dos grupos: exemplo do grupo cetona}
+  \begin{itemize}
+    \item O centro do grupo funcional deve ser localizado, \ce{C=O}.
+    \item O grupo é expandido a partir do seu centro para abranger uma
+    \textbf{área neutra} da molécula.
+    \item Por exemplo, \ce{CH3COCH3} para acetona, \ce{CH2COCH2} para dibutil
+    cetona e \ce{CH3COCH} para metil isopropil cetona.
+  \end{itemize}
+  \begin{center}
+  \includegraphics[width=0.9\textwidth]{img/cetona}
+  \end{center}
+  \begin{itemize} \pause
+  \item Para que o número de parâmetros não aumente muito,
+  	é assumido que todos os \textbf{subgrupos} acima pertencem a um \textbf{mesmo grupo}
+  	com os mesmos parâmetros $Q_k^+$, $Q_k^-$ e $\sigma_k^+$, diferindo apenas na área
+  	e volume total.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Necessidade de novos grupos: moléculas complexas}
+  \begin{itemize}
+    \item Dois ou mais heteroátomos estão muito próximos.
+    \item A interação entre os átomos não é descrita adequadamente pela simples
+    soma dos grupos.
+    \item É preciso definir novos grupos, menos abrangentes.
+  \end{itemize}
+  \begin{center}
+  \includegraphics[width=0.6\textwidth]{img/ester_1}
+  \end{center}
+  \begin{footnotesize}
+  É o caso da \textbf{triacetina} e do \textbf{dietil ftalato}
+  \end{footnotesize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Necessidade de novos grupos: geometrias diferentes}
+  \begin{itemize}
+    \item A geometria do grupo funcional deve ser a mesma, independente da
+    molécula em que este grupo ocorra
+    \item Éster cíclico tem diferentes ângulos de ligação quando comparado com
+    um linear
+  \end{itemize}
+  \begin{center}
+  \includegraphics[width=0.6\textwidth]{img/ester_2}
+  \end{center}
+  \begin{footnotesize}
+  Um novo grupo foi adicionado para a \textbf{$\gamma$-Butirolactona}.
+  \end{footnotesize}
+\end{frame}
+
+\section{Conclusão} 
+
+\begin{frame}
+  \frametitle{Equações de Estado}
+
+  \begin{itemize}
+    \item As Equações de Estado são utilizados basicamente quando possuem
+   	equilibrio de fase em alta pressão com pouco desvio da idealidade:
+    \begin{itemize}
+      \item Troca térmica
+      \item Equilíbrio de fases
+      \item \ldots
+    \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Modelos de $\gamma$}
+
+  \begin{itemize}
+    \item Os modelos de $\gamma$ são utilizados basicamente quando possuem
+   	equilibrio de fase em baixas pressões
+    \begin{itemize}
+      \item Coluna de destilação
+      \item Flash
+    \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Equações de Estado + Modelos de $\gamma$}
+  \begin{itemize}
+    \item As Equações de Estado acopladas a modelos de $\gamma$ são utilizados
+    basicamente quando possuem equilibrio de fase em alta pressão com alto
+    desvio da idealidade:
+    \begin{itemize}
+      \item Troca térmica
+      \item Equilíbrio de fases
+       \item Coluna de destilação
+      \item Flash
+      \item \ldots
+    \end{itemize}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\Huge{\centerline{Obrigado}}
+\end{frame}
 
 \end{document} 
